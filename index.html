@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Pão de Alho JBS Frios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. CONFIGURAÇÃO DE CORES E TEMA ( McKinsey/Dark Style ) */
+        :root {
+            --bg-body: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --blue: #1f6feb;
+            --green: #2ea043;
+            --red: #f85149;
+            --gold: #f59e0b;
+        }
+
+        * { box-sizing: border-box; outline: none; }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Background Design: Gradient Blobs */
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(31, 111, 235, 0.05) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(86, 211, 100, 0.05) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .container { width: 100%; max-width: 1200px; }
+
+        /* 2. CABEÇALHO */
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-family: 'Poppins'; font-size: 38px; font-weight: 700; margin: 0; letter-spacing: -1px; text-transform: uppercase; }
+        .header p { color: var(--text-muted); font-size: 16px; margin-top: 5px; }
+
+        /* 3. TOTALIZADORES (KPIs) */
+        .kpi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 50px; }
+        .kpi-card { 
+            background: var(--bg-card); padding: 35px; border-radius: 20px; 
+            border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .kpi-card span { font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .kpi-val { font-size: 52px; font-weight: 700; color: var(--blue); line-height: 1; margin-top: 10px; }
+        .kpi-card.success .kpi-val { color: var(--green); }
+        .kpi-icon { font-size: 40px; opacity: 0.15; }
+
+        /* 4. RANKING EM LISTA POR SUPERVISOR */
+        .supervisor-section { margin-bottom: 60px; }
+        .supervisor-title { 
+            font-family: 'Poppins'; font-size: 24px; color: var(--gold); 
+            margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border);
+            display: flex; align-items: center; gap: 15px; 
+        }
+
+        .vendedor-lista { display: flex; flex-direction: column; gap: 12px; }
+        .vendedor-item { 
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; 
+            padding: 15px 30px; display: flex; align-items: center; cursor: pointer; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .vendedor-item:hover { border-color: var(--blue); transform: translateX(10px); background: #1c212c; }
+
+        .v-foto { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--blue); margin-right: 25px; background-color: #000; }
+        .v-nome-box { flex-grow: 1; }
+        .v-nome { font-size: 19px; font-weight: 700; display: block; color: var(--text-main); }
+        .v-codigo { font-size: 13px; color: var(--text-muted); }
+
+        /* Métricas no Card */
+        .v-metrics-inline { display: flex; gap: 40px; align-items: center; text-align: right; }
+        .metric-mini { display: flex; flex-direction: column; }
+        .metric-mini span { font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.5px; }
+        .metric-mini strong { font-size: 22px; font-weight: 700; }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .status-badge.success {
+            background-color: rgba(46, 160, 67, 0.15);
+            color: var(--green);
+            border: 1px solid rgba(46, 160, 67, 0.3);
+        }
+        .status-badge.fail {
+            background-color: rgba(248, 81, 73, 0.15);
+            color: var(--red);
+            border: 1px solid rgba(248, 81, 73, 0.3);
+        }
+
+        .text-green { color: var(--green); }
+        .text-red { color: var(--red); }
+        .text-blue { color: var(--blue); }
+
+        /* 5. MODAL DETALHADO */
+        .modal-overlay { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.9); z-index: 1000; align-items: center; justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        .modal-box { 
+            background: var(--bg-card); width: 460px; padding: 60px 40px; border-radius: 30px; 
+            border: 1px solid var(--border); text-align: center; position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5); animation: modalIn 0.4s ease;
+        }
+        @keyframes modalIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .close-btn { position: absolute; top: 25px; right: 30px; font-size: 26px; cursor: pointer; color: var(--text-muted); transition: 0.2s; }
+        .close-btn:hover { color: var(--text-main); }
+        
+        .modal-img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid var(--blue); margin-bottom: 25px; box-shadow: 0 0 20px rgba(31, 111, 235, 0.3); }
+        .modal-nome { font-size: 28px; font-weight: 700; margin: 0; font-family: 'Poppins'; }
+        .modal-sup { color: var(--text-muted); font-size: 15px; margin-bottom: 35px; }
+        
+        .modal-row { 
+            background: #21262d; padding: 20px; border-radius: 18px; margin-top: 15px; 
+            display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--border);
+        }
+        .modal-row span { font-weight: 600; color: var(--text-muted); }
+        .modal-row strong { font-size: 24px; font-weight: 700; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-body); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>CAMPANHA PÃO DE ALHO '26</h1>
+            <p>Performance de Vendas | Período: Junho e Julho</p>
+        </header>
+
+        <section class="kpi-row">
+            <div class="kpi-card">
+                <div>
+                    <span>OBJETIVO GERAL JBS</span>
+                    <div class="kpi-val" id="totalObj">0</div>
+                </div>
+                <div class="kpi-icon text-blue"><i class="fa-solid fa-bullseye"></i></div>
+            </div>
+            <div class="kpi-card success">
+                <div>
+                    <span>REALIZADO (JUN+JUL)</span>
+                    <div class="kpi-val" id="totalReal">0</div>
+                </div>
+                <div class="kpi-icon text-green"><i class="fa-solid fa-box-open"></i></div>
+            </div>
+        </section>
+
+        <main class="main-content" id="rankingRoot">
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="vendedorModal">
+        <div class="modal-box">
+            <span class="close-btn" onclick="fecharModal()">&times;</span>
+            <img src="" id="mFoto" class="modal-img">
+            <h2 id="mNome" class="modal-nome">Nome</h2>
+            <p id="mSup" class="modal-sup">Supervisor</p>
+            
+            <div class="modal-row">
+                <span><i class="fa-solid fa-arrow-trend-up text-blue"></i> OBJETIVO:</span>
+                <strong id="mObj" class="text-blue">0 Cxs</strong>
+            </div>
+            <div class="modal-row">
+                <span><i class="fa-solid fa-check-double" id="mRealIcon"></i> REALIZADO:</span>
+                <strong id="mReal">0 Cxs</strong>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let globalData = {};
+
+        async function carregarDashboard() {
+            try {
+                // Carrega o arquivo JSON gerado pelo Python
+                const response = await fetch('dados_vendas.json');
+                globalData = await response.json();
+
+                // Atualiza Totalizadores com Cxs
+                document.getElementById('totalObj').innerText = Math.round(globalData.geral_objetivo) + " Cxs";
+                document.getElementById('totalReal').innerText = Math.round(globalData.geral_realizado) + " Cxs";
+
+                const root = document.getElementById('rankingRoot');
+                root.innerHTML = globalData.equipes.map(equipe => `
+                    <div class="supervisor-section">
+                        <div class="supervisor-title">
+                            <i class="fa-solid fa-users-viewfinder"></i> Equipe: ${equipe.supervisor}
+                        </div>
+                        <div class="vendedor-lista">
+                            ${equipe.vendedores.map(v => {
+                                const realiz = Math.round(v.realizado);
+                                const objetiv = Math.round(v.objetivo);
+                                const atingiuMeta = realiz >= objetiv;
+                                const statusClass = atingiuMeta ? 'success' : 'fail';
+                                const statusIcon = atingiuMeta ? 'fa-check' : 'fa-exclamation';
+                                const realClass = atingiuMeta ? 'text-green' : 'text-red';
+
+                                return `
+                                    <div class="vendedor-item" onclick="abrirModal('${v.cod}', '${equipe.supervisor}')">
+                                        <img src="${v.foto}" class="v-foto" onerror="this.src='https://cdn-icons-png.flaticon.com/512/149/149071.png'">
+                                        <div class="v-nome-box">
+                                            <span class="v-nome">${v.nome}</span>
+                                            <span class="v-codigo">Cód. Vendedor: ${v.cod}</span>
+                                        </div>
+                                        <div class="v-metrics-inline">
+                                            <div class="metric-mini">
+                                                <span>Objetivo</span>
+                                                <strong class="text-blue">${objetiv}</strong>
+                                            </div>
+                                            <div class="metric-mini">
+                                                <span>Realizado</span>
+                                                <strong class="${realClass}">${realiz}</strong>
+                                            </div>
+                                            <div class="status-badge ${statusClass}" title="${atingiuMeta ? 'Atingiu a meta!' : 'Abaixo da meta'}">
+                                                <i class="fa-solid ${statusIcon}"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `).join('');
+
+            } catch (error) {
+                console.error("Erro ao carregar dados_vendas.json. Verifique se o Python foi executado.", error);
+            }
+        }
+
+        function abrirModal(codigo, supervisor) {
+            let vendedor = null;
+            // Busca o vendedor no banco de dados carregado
+            globalData.equipes.forEach(eq => {
+                const achou = eq.vendedores.find(v => v.cod === codigo);
+                if(achou) vendedor = achou;
+            });
+
+            if(!vendedor) return;
+
+            const realiz = Math.round(vendedor.realizado);
+            const objetiv = Math.round(vendedor.objetivo);
+            const atingiuMeta = realiz >= objetiv;
+
+            // Preenche o Modal
+            document.getElementById('mNome').innerText = vendedor.nome;
+            document.getElementById('mSup').innerText = "Equipe / Supervisor: " + supervisor;
+            document.getElementById('mObj').innerText = objetiv + " Cxs";
+            
+            const realEl = document.getElementById('mReal');
+            realEl.innerText = realiz + " Cxs";
+            
+            const mRealIcon = document.getElementById('mRealIcon');
+
+            // Aplica cores dinâmicas no modal baseado no atingimento da meta
+            if (atingiuMeta) {
+                realEl.className = 'text-green';
+                mRealIcon.className = 'fa-solid fa-check-double text-green';
+            } else {
+                realEl.className = 'text-red';
+                mRealIcon.className = 'fa-solid fa-circle-exclamation text-red';
+            }
+            
+            const img = document.getElementById('mFoto');
+            img.src = vendedor.foto;
+            img.onerror = () => img.src = 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
+
+            document.getElementById('vendedorModal').style.display = 'flex';
+        }
+
+        function fecharModal() {
+            document.getElementById('vendedorModal').style.display = 'none';
+        }
+
+        // Fecha o modal se clicar na área escura
+        window.onclick = (e) => {
+            if(e.target.id === 'vendedorModal') fecharModal();
+        }
+
+        // Inicializa
+        carregarDashboard();
+    </script>
+</body>
+</html>
