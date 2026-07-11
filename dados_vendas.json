@@ -1,6 +1,6 @@
 {
     "geral_objetivo": 1455,
-    "geral_realizado": 841,
+    "geral_realizado": 1050,
     "equipes": [
         {
             "supervisor": "ANDREIA MEDEIROS",
@@ -8,35 +8,35 @@
                 {
                     "cod": "11",
                     "nome": "BRUNO OLIVEIRA",
-                    "realizado": 45,
+                    "realizado": 46,
                     "objetivo": 44,
                     "foto": "imagens/11.png"
                 },
                 {
                     "cod": "46",
                     "nome": "ANDRÉ RODRIGUES",
-                    "realizado": 26,
+                    "realizado": 32,
                     "objetivo": 37,
                     "foto": "imagens/46.png"
                 },
                 {
-                    "cod": "4",
-                    "nome": "GABRIEL PEREIRA",
-                    "realizado": 22,
-                    "objetivo": 16,
-                    "foto": "imagens/4.png"
-                },
-                {
                     "cod": "6",
                     "nome": "EVERALDO ALVES",
-                    "realizado": 21,
+                    "realizado": 31,
                     "objetivo": 48,
                     "foto": "imagens/6.png"
                 },
                 {
+                    "cod": "4",
+                    "nome": "GABRIEL PEREIRA",
+                    "realizado": 24,
+                    "objetivo": 16,
+                    "foto": "imagens/4.png"
+                },
+                {
                     "cod": "43",
                     "nome": "ROMILSON ALVES",
-                    "realizado": 5,
+                    "realizado": 9,
                     "objetivo": 6,
                     "foto": "imagens/43.png"
                 }
@@ -46,53 +46,53 @@
             "supervisor": "DANILO",
             "vendedores": [
                 {
-                    "cod": "2",
-                    "nome": "CAMILA FERREIRA",
-                    "realizado": 48,
-                    "objetivo": 44,
-                    "foto": "imagens/2.png"
-                },
-                {
                     "cod": "8",
                     "nome": "PEDRO HENRIQUE",
-                    "realizado": 45,
+                    "realizado": 60,
                     "objetivo": 46,
                     "foto": "imagens/8.png"
                 },
                 {
+                    "cod": "2",
+                    "nome": "CAMILA FERREIRA",
+                    "realizado": 50,
+                    "objetivo": 44,
+                    "foto": "imagens/2.png"
+                },
+                {
                     "cod": "109",
                     "nome": "MARCOS JEAN",
-                    "realizado": 30,
+                    "realizado": 39,
                     "objetivo": 30,
                     "foto": "imagens/109.png"
                 },
                 {
                     "cod": "10",
                     "nome": "HIAN RIBEIRO",
-                    "realizado": 22,
+                    "realizado": 30,
                     "objetivo": 27,
                     "foto": "imagens/10.png"
                 },
                 {
                     "cod": "47",
                     "nome": "HELLEN GOMES",
-                    "realizado": 18,
+                    "realizado": 21,
                     "objetivo": 11,
                     "foto": "imagens/47.png"
                 },
                 {
-                    "cod": "17",
-                    "nome": "EDVALDO",
-                    "realizado": 6,
-                    "objetivo": 13,
-                    "foto": "imagens/17.png"
-                },
-                {
                     "cod": "48",
                     "nome": "JAMILE GONCALVES",
-                    "realizado": 2,
+                    "realizado": 12,
                     "objetivo": 8,
                     "foto": "imagens/48.png"
+                },
+                {
+                    "cod": "17",
+                    "nome": "EDVALDO",
+                    "realizado": 8,
+                    "objetivo": 13,
+                    "foto": "imagens/17.png"
                 },
                 {
                     "cod": "176",
@@ -109,79 +109,79 @@
                 {
                     "cod": "117",
                     "nome": "JORGE REIS (117)",
-                    "realizado": 31,
+                    "realizado": 36,
                     "objetivo": 28,
                     "foto": "imagens/117.png"
                 },
                 {
-                    "cod": "35",
-                    "nome": "MATHEUS RIBEIRO",
-                    "realizado": 21,
-                    "objetivo": 20,
-                    "foto": "imagens/35.png"
-                },
-                {
                     "cod": "18",
                     "nome": "ILMA MOURA",
-                    "realizado": 19,
+                    "realizado": 28,
                     "objetivo": 37,
                     "foto": "imagens/18.png"
                 },
                 {
+                    "cod": "35",
+                    "nome": "MATHEUS RIBEIRO",
+                    "realizado": 24,
+                    "objetivo": 20,
+                    "foto": "imagens/35.png"
+                },
+                {
                     "cod": "101",
                     "nome": "PAULA RIBEIRO (101)",
-                    "realizado": 18,
+                    "realizado": 20,
                     "objetivo": 14,
                     "foto": "imagens/101.png"
                 },
                 {
                     "cod": "15",
                     "nome": "CESAR DIAS",
-                    "realizado": 14,
+                    "realizado": 17,
                     "objetivo": 16,
                     "foto": "imagens/15.png"
                 },
                 {
                     "cod": "120",
                     "nome": "GABRIEL SODRE (120)",
-                    "realizado": 14,
+                    "realizado": 16,
                     "objetivo": 15,
                     "foto": "imagens/120.png"
                 },
                 {
-                    "cod": "125",
-                    "nome": "CLAUBELINO SANTOS (125)",
-                    "realizado": 6,
-                    "objetivo": 11,
-                    "foto": "imagens/125.png"
-                },
-                {
                     "cod": "170",
                     "nome": "EDSON CORREIA (77 99165-5655)",
-                    "realizado": 6,
+                    "realizado": 9,
                     "objetivo": 9,
                     "foto": "imagens/170.png"
                 },
                 {
-                    "cod": "129",
-                    "nome": "UELESSON OLIVEIRA (129)",
-                    "realizado": 2,
-                    "objetivo": 9,
-                    "foto": "imagens/129.png"
+                    "cod": "125",
+                    "nome": "CLAUBELINO SANTOS (125)",
+                    "realizado": 8,
+                    "objetivo": 11,
+                    "foto": "imagens/125.png"
                 },
                 {
                     "cod": "177",
                     "nome": "ROTA MACAUBAS (75 9102-0548)",
-                    "realizado": 2,
+                    "realizado": 6,
                     "objetivo": 5,
                     "foto": "https://cdn-icons-png.flaticon.com/512/149/149071.png"
                 },
                 {
                     "cod": "20",
                     "nome": "JONES FERNANDES",
-                    "realizado": 1,
+                    "realizado": 3,
                     "objetivo": 5,
                     "foto": "imagens/20.png"
+                },
+                {
+                    "cod": "129",
+                    "nome": "UELESSON OLIVEIRA (129)",
+                    "realizado": 3,
+                    "objetivo": 9,
+                    "foto": "imagens/129.png"
                 }
             ]
         },
@@ -201,18 +201,18 @@
             "supervisor": "JEIZIANE",
             "vendedores": [
                 {
+                    "cod": "124",
+                    "nome": "SHEILLA MARIANO",
+                    "realizado": 17,
+                    "objetivo": 6,
+                    "foto": "imagens/124.png"
+                },
+                {
                     "cod": "123",
                     "nome": "ANDRE VINAGRE (123)",
                     "realizado": 16,
                     "objetivo": 11,
                     "foto": "imagens/123.png"
-                },
-                {
-                    "cod": "124",
-                    "nome": "SHEILLA MARIANO",
-                    "realizado": 14,
-                    "objetivo": 6,
-                    "foto": "imagens/124.png"
                 },
                 {
                     "cod": "34",
@@ -222,6 +222,13 @@
                     "foto": "imagens/34.png"
                 },
                 {
+                    "cod": "122",
+                    "nome": "JULIETE LIMA (122)",
+                    "realizado": 10,
+                    "objetivo": 7,
+                    "foto": "imagens/122.png"
+                },
+                {
                     "cod": "171",
                     "nome": "DAGMAR SILVA (75 98201-9217)",
                     "realizado": 10,
@@ -229,16 +236,9 @@
                     "foto": "imagens/171.png"
                 },
                 {
-                    "cod": "122",
-                    "nome": "JULIETE LIMA (122)",
-                    "realizado": 9,
-                    "objetivo": 7,
-                    "foto": "imagens/122.png"
-                },
-                {
                     "cod": "178",
                     "nome": "MARGARIDA (74 99144-4545)",
-                    "realizado": 4,
+                    "realizado": 6,
                     "objetivo": 5,
                     "foto": "imagens/178.png"
                 },
@@ -257,42 +257,42 @@
                 {
                     "cod": "25",
                     "nome": "MAURÍCIO SILVA",
-                    "realizado": 54,
+                    "realizado": 60,
                     "objetivo": 41,
                     "foto": "imagens/25.png"
                 },
                 {
                     "cod": "7",
                     "nome": "AROLDO",
-                    "realizado": 46,
+                    "realizado": 51,
                     "objetivo": 54,
                     "foto": "imagens/7.png"
                 },
                 {
                     "cod": "12",
                     "nome": "DIEGO SILVA",
-                    "realizado": 29,
+                    "realizado": 32,
                     "objetivo": 24,
                     "foto": "imagens/12.png"
                 },
                 {
                     "cod": "91",
                     "nome": "CLARA ARAUJO",
-                    "realizado": 18,
+                    "realizado": 29,
                     "objetivo": 33,
                     "foto": "imagens/91.png"
                 },
                 {
                     "cod": "118",
                     "nome": "CARMILTON GOMES (118)",
-                    "realizado": 16,
+                    "realizado": 21,
                     "objetivo": 22,
                     "foto": "imagens/118.png"
                 },
                 {
                     "cod": "114",
                     "nome": "ANDERSON NASCIMENTO",
-                    "realizado": 7,
+                    "realizado": 12,
                     "objetivo": 13,
                     "foto": "imagens/114.png"
                 }
@@ -304,42 +304,42 @@
                 {
                     "cod": "95",
                     "nome": "RAUNES NASCIMENTO",
-                    "realizado": 67,
+                    "realizado": 84,
                     "objetivo": 82,
                     "foto": "imagens/95.png"
                 },
                 {
                     "cod": "97",
                     "nome": "ALLYS ARAUJO",
-                    "realizado": 36,
+                    "realizado": 50,
                     "objetivo": 31,
                     "foto": "imagens/97.png"
                 },
                 {
                     "cod": "128",
                     "nome": "GILDASIO GAMA (128)",
-                    "realizado": 22,
+                    "realizado": 38,
                     "objetivo": 37,
                     "foto": "imagens/128.png"
                 },
                 {
                     "cod": "3",
                     "nome": "CAIO VINICIUS",
-                    "realizado": 21,
+                    "realizado": 27,
                     "objetivo": 21,
                     "foto": "imagens/3.png"
                 },
                 {
                     "cod": "140",
                     "nome": "JAILTON SANTOS (140)",
-                    "realizado": 10,
+                    "realizado": 15,
                     "objetivo": 19,
                     "foto": "imagens/140.png"
                 },
                 {
                     "cod": "139",
                     "nome": "TADEU SANTOS",
-                    "realizado": 7,
+                    "realizado": 9,
                     "objetivo": 10,
                     "foto": "imagens/139.png"
                 }
